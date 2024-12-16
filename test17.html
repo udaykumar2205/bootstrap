@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        div
+        {
+            background-color: blue;
+            text-align: center;
+            padding: 30px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        div>span
+        {
+            padding: 20px;
+            color: white;
+        }
+        button{
+            font-size: 25px;
+        }
+        div>button:hover
+        {
+            cursor: pointer;
+            background-color:yellow;
+            color:red ;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="dec">Dec</button>
+        <span id="value">Count</span>
+        <button id="inc">Inc</button>
+    </div>
+    <div>
+        <button id="set">Reset</button>
+    </div>
+
+    <script>
+        let num=document.getElementById('value')
+        num.textContent=0
+
+        let incbtn=document.getElementById('inc')
+        incbtn.addEventListener('click',function(){
+            num.textContent++
+        })
+
+        let decbtn=document.getElementById('dec')
+        decbtn.addEventListener('click',function(){
+            if (num.textContent>1)
+            num.textContent--
+
+            else (num.textContent=1)
+        })
+
+        let restartbtn=document.getElementById('set')
+        restartbtn.addEventListener('click',function(){
+            num.textContent=0
+        })
+    </script>
+</body>
+</html>

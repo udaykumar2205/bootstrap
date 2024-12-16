@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1 id="heading">This is a HEADING</h1>
+    </div>
+    <script>
+        const div=document.querySelector(".container")
+        const h1Tag=document.getElementId("heading")
+        //console.log(div,Tag)
+
+        //creating element
+        let pTag=document.createElement("p")
+        pTag.innerText="This is a paragraph"
+        console.log(pTag)
+        //appendChild
+        div.appenChild(pTag)
+        let spanTag=document.createElement("span")
+        spanTag.innerHTML="IT's a span"
+        div.appenChild(spanTag)
+
+        //removeChild
+        div.removeChild(pTag)
+
+        //replaceChild
+        div.replaceChild(pTag,h1Tag)
+
+    </script>
+</body>
+</html>

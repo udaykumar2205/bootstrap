@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .virat
+        {
+            color:white;
+            background-color: #000;
+        }
+        .rohit
+        {
+            border:2px solid blue;
+        }
+        .rahul
+        {
+            color:red;
+        }
+        .pant
+        {
+            color:green;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="a" class="virat rohit">WELCOME TO DOM</h2>
+    <script>
+       let myTag=document.getElementById("a")
+
+       let classLists=myTag.classList
+       console.log(classLists);
+
+       //add
+       myTag.classList.add("rahul")
+       myTag.classList.add("bumrah")
+
+       //remove
+       myTag.classList.remove("virat")
+
+       //replace
+       myTag.classList.replace("rahul","pant")
+       
+       //toggle (if presented remove it,otherwise add)
+       myTag.classList.toggle("rohit")
+       myTag.classList.toggle("rohit")
+       myTag.classList.toggle("rohit")
+    </script>
+</body>
+</html>

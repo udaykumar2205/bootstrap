@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="hello">HELLO JSPIDERS</p>
+    <script>
+        letpTag=document.querySelector("p")
+        //set
+        pTag.setAttribut("id","para")
+        pTag.setAttribute("align","center")
+
+        //getting attribute
+        let pClass=pTag.getAttribute("class")
+        console.log(pClass);//hello
+
+        //remove attribute
+        pTag.removeAttribute("align")
+
+        //has attribute(boolean result)
+        let result1=pTag.hasAttribute("class")
+        let result2=pTag.hasAttribute("height")
+        console.log(result1,result2); //true false
+
+        //document.body.style.backgroundcolor="gray"
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>ALL</button>
+    <button id="male">MALE</button>
+    <button id="female">FEMALE</button>
+    <button>Short BY NAME</button>
+    <button>Short BY AGE</button>
+    <table border="1" style="border-collapse: collapse" cellpadding="8">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>GENDER</th>
+            </tr>
+        </thead>
+        <tbody id="display"
+
+        </tbody>
+    </table>
+    <script>
+        let students = [
+            { id: 1, name: "Rahul", age: 18, gender: "male" },
+            { id: 2, name: "Virat", age: 12, gender: "male" },
+            { id: 3, name: "Siri", age: 28, gender: "female" },
+            { id: 4, name: "Alexa", age: 13, gender: "female" },
+            { id: 5, name: "Rohit", age: 29, gender: "male" },
+            { id: 6, name: "Jyoti", age: 21, gender: "female" },
+            { id: 7, name: "Hardik", age: 30, gender: "male" },
+            { id: 8, name: "Kavya", age: 16, gender: "female" }
+        ]
+        let tBody = document.getElementById("display")
+        function displayTable(arr) {
+            let str = ""
+            arr.forEach((ele) => {
+                str += `<tr>
+                <td>${ele.id}</td>
+                <td>${ele.name}</td>
+                <td>${ele.age}</td>
+                <td>${ele.gender}</td>
+                </tr> `
+            })
+            tBody.innerHTML = str
+        }
+        displayTable(students)
+
+        document.getElementById("male").addEventListener("click", () => {
+            let maleStudents = students.filter((ele) => {
+                if (ele.gender == "male") {
+                    return ele
+                }
+            })
+            displayTable(maleStudents)
+        })
+        document.getElementById("female").addEventListener("click", () => {
+            let femaleStudents = students.filter(ele => ele.gender == "female")
+            displayTable(femaleStudents)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Stopwatch</title>
+    <link rel="stylesheet" href="../../bootstrap1/bs/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="../../bootstrap1/bs/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-sm-8">
+                <div class="card text-center">
+                    <div class="card-header bg-dark text-white">
+                        <h2>Stopwatch</h2>
+                    </div>
+                    <div class="card-body">
+                        <h2 id="stopwatch">00:00:00</h2>
+                        <button type="button" class="btn btn-success" id="startBtn">Start</button>
+                        <button type="button" class="btn btn-danger" id="stopBtn">Stop</button>
+                        <button type="button" class="btn btn-warning" id="resetBtn">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let stopwatchInterval;
+        let seconds = 0;
+        let minutes = 0;
+        let hours = 0;
+
+        function startStopwatch() {
+            stopwatchInterval = setInterval(() => {
+                seconds++;
+                if (seconds === 60) {
+                    seconds = 0;
+                    minutes++;
+                }
+                if (minutes === 60) {
+                    minutes = 0;
+                    hours++;
+                }
+
+                const formattedSeconds = seconds.toString().padStart(2, '0');
+                const formattedMinutes = minutes.toString().padStart(2, '0');
+                const formattedHours = hours.toString().padStart(2, '0');
+
+                document.getElementById('stopwatch').textContent = ${formattedHours}:${formattedMinutes}:${formattedSeconds};
+            }, 1000);
+        }
+
+        function stopStopwatch() {
+            clearInterval(stopwatchInterval);
+        }
+
+        function resetStopwatch() {
+            clearInterval(stopwatchInterval);
+            seconds = 0;
+            minutes = 0;
+            hours = 0;
+            document.getElementById('stopwatch').textContent = "00:00:00";
+        }
+
+        document.getElementById('startBtn').addEventListener('click', startStopwatch);
+        document.getElementById('stopBtn').addEventListener('click', stopStopwatch);
+        document.getElementById('resetBtn').addEventListener('click', resetStopwatch);
+    </script>
+</body>
+</html>

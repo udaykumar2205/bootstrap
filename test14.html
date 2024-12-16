@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increment and Decrement</title>
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .box {
+            font-size: 20px;
+            padding: 10px;
+            margin: 10px;
+            width: 50px;
+            text-align: center;
+            display: inline-block;
+            border: 1px solid #ccc;
+        }
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <button class="button" id="incrementBtn">Click here to increment</button>
+    <div class="box" id="numberBox">0</div>
+    <button class="button" id="decrementBtn">Click here to decrement</button>
+</div>
+
+<script>
+    // Get the DOM elements
+    const incrementButton = document.getElementById('incrementBtn');
+    const decrementButton = document.getElementById('decrementBtn');
+    const numberBox = document.getElementById('numberBox');
+    
+    // Initial number value
+    let number = 0;
+    
+    // Event listener to increment the number
+    incrementButton.addEventListener('click', function() {
+        number++;
+        numberBox.textContent = number;
+    });
+
+    // Event listener to decrement the number
+    decrementButton.addEventListener('click', function() {
+        if (number>0)
+            number--;
+            numberBox.textContent = number;
+    });
+</script>
+
+</body>
+</html>

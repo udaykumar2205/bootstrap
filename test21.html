@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="inc">increment</button>
+    <b id="count">0</b>
+    <button id="dec">decrement</button>
+    <script>
+        let incBtn=document.getElementById("inc")
+        let decBtn=document.getElementById("dec")
+        let countTag=document.getElementById("count")
+        
+        let count=Number(countTag.innerText)
+
+        incBtn.addEventListener("click",()=>{
+            countTag.innerText=++count
+        })
+        decBtn.addEventListener("click",()=>{
+            countTag.innerText=--count
+        })
+    </script>
+</body>
+</html>
